@@ -76,11 +76,12 @@ class Output(cowrie.core.output.Output):
         1146, "Table '...' doesn't exist"
         1406, "Data too long for column '...' at row ..."
         """
-        if error.value[0] in (1146, 1406):
+        log.msg("output_mysql: MySQL Error: {}".format(error.value))
+        """if error.value[0] in (1146, 1406):
             log.msg("output_mysql: MySQL Error: {}".format(error.value))
             log.msg("MySQL schema maybe misconfigured, doublecheck database!")
         else:
-            log.err("output_mysql: MySQL Error: {}".format(error.value))
+            log.err("output_mysql: MySQL Error: {}".format(error.value))"""
 
     def simpleQuery(self, sql, args):
         """
